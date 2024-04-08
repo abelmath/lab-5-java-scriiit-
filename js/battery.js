@@ -4,6 +4,7 @@ const chargeStatus = document.querySelector('#battery dd:nth-of-type(1)');
 const chargeLevel = document.querySelector('#battery dd:nth-of-type(2) output');
 const chargeMeter = document.querySelector('#battery dd:nth-of-type(2) progress');
 const imageContainer = document.getElementById('image-container');
+const batteryImage = document.getElementById('batteryImage');
 
 /* Functions
 -------------------------------------------------- */
@@ -22,10 +23,7 @@ function updateBatteryStatus(battery) {
 
 function updateRobotImage(batteryLevel) {
     const imageUrl = generateRobotImageUrl(batteryLevel);
-    const image = new Image();
-    image.src = imageUrl;
-    imageContainer.innerHTML = '';
-    imageContainer.appendChild(image);
+    batteryImage.src = imageUrl;
 }
 
 function generateRobotImageUrl(batteryLevel) {
